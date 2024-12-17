@@ -1,8 +1,9 @@
 package tj703.study;
 
 public class L07NumberOperator {
-   public static void main(String[] args) {
+   // 연산자 Operators
 
+   public static void main(String[] args) {
 
 /* JavaScript와 Java에서의 데이터 연산자들을 비교
 
@@ -32,21 +33,24 @@ JavaScript에서만 사용되는 연산자
 ===, !==:
 JavaScript에서만 사용되는 엄격 비교 연산자입니다. ===와 !==는 타입까지 고려하여 비교합니다.
 Java에서는 == 만 사용되며, Java는 기본적으로 형변환을 하지 않기 때문에 ==는 타입까지 동일한 값을 비교합니다.
-
  */
 
+
       /*
-       * js : +,-,*,/,%,** (>>,<<,~)
-       * java : +,-,*,/,%,Math.pow() (>>,<<,~)
-       * */
+        js : +,-,*,/,%,** (>>,<<,~)
+        java : +,-,*,/,%,Math.pow() (>>,<<,~)
+        **는 js에서만, java에서는 Math.pow()를 쓴다.
+      */
       int i = 10 + 20;
       i = 10 - 20;
       i = 10 * 20;
+
       //i=2**5;
       i = (int) Math.pow(2, 5); //거듭제곱의 결과가 큰수기 때문에 double 을 반환
+
       System.out.println(i);
       System.out.println(10 / 3); //3.33333333333333333 (x) => 3
-      //정수를 정수와 연산하면 무조건 정수를 반환
+      // 중요!!! 정수를 정수와 연산하면 무조건 정수를 반환
       System.out.println(10 / 3.0);
       double d = 10 / 3;
       System.out.println(d);

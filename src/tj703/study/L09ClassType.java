@@ -1,18 +1,20 @@
 package tj703.study;
 
-import java.util.ArrayList; // 얘는 java에서 제공하는 기본 라이브러리 ( java.util )
-// 다른 폴더에 있는 것을 가져오는 것.
+import java.util.ArrayList; //java에서 제공하는 기본 라이브러리(java.util)
 
 // ** 함수선언식 vs 함수표현식
 // function add (a, b){} : 함수 선언식. 호이스팅hoisting이 발생
 //             (코드를 실행하기 전에 컴파일 하면서, 이름있는 메서들을 메서드영역 메모리에 미리 저장함) (js, java 둘다)
 // const add = function(a,b) {} : 함수 표현식. 익명함수 = 호이스팅 발생 안함 = 실행되면서 메모리에 저장됨
 
+
 // 클래스 내에 세가지, 필드, 생성자, 메서드를 설정할 수 있다.
 class DataType {
    // 클래스 안에서 필드와 메서드를 정의할 수 있다.
    // == 타입에는 필드를 정의할 수 있데, 필드에는 전역변수, 메서드, 생성자가 있다.
    // 필드와 메소드는 꼭 전역(class의 첫번째 영역)에 변수로 선언해야 한다.
+
+   // 전역변수
    int age = 38;
    String name = "최경민";
 
@@ -27,17 +29,18 @@ class DataType {
 
    public void add(int a, int b, int c) {
       System.out.println("a+b+c=" + (a + b + c));
-   }
-   // java에서는 이름이 같으나 매개변수가 다른 메서드를 또 설정할 수 있다. == 오버로드overloading
+   }  // java에서는 이름이 같으나 매개변수가 다른 메서드를 또 설정할 수 있다. == 오버로드overloading
 
    public int add(int a, int b, int c, int d) {
-      // 얘는 void가 아님. int임. 이 차이가 뭔지를 알아야 함.
+      // 얘는 void가 아님. int임.이라고 먼저 명시.
+      // 이 차이가 뭔지를 알아야 함. 그러면 변수형식를 int로 설정해주고, 그 변수를 꼭 return 반환을 해줘야 함.
       int add = 0; // null를 놓을 수 없어서 0을 넣는 것.
       add = a + b + c + d;
       return add;
       // 반환값이란 함수가 실행되면 그 자리에 툭 떨어지는 것.
       // return은 하나만 내놓을 수 있음. [js,java 모두] (dart언어는 여러개 가능)
    }
+
 
    // ** 오버로드overloading란:
    // 동일한 이름을 가진 메서드를 여러 번 정의할 수 있는 기능을 의미합니다.
@@ -73,34 +76,37 @@ class DataType {
    //     private : 비공개된 클래스, 메서드, 변수 등을 의미합니다. 같은 클래스 내에서만 접근 가능합니다.
    //     protected : 자식 클래스에서 접근할 수 있는 멤버입니다. 같은 패키지 내에서 접근도 가능합니다.
 
-   // ClassName (생성자이름) : 생성자의 이름은 꼭 class 이름과 같다.
+   // ClassName (생성자이름) : 생성자의 이름은 꼭 class의 이름과 같다.
    // return type(void) 반환타입이 생략 ; 생성자를 호출하면, 반환되는 객체의 타입이 생성자의 이름과 같다.
    // == 반환타입이 정의되어 있고, 생성자의 이름(constructor)을 생략한 것이라고 이해하는게 더 정확.
    // 생성자를 new 연산자와 같이 호출하면 객체를 반환.
-
 }
 
 
 //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ main 밖에서 class(필드와 메서드의 틀)를 설정한다.
-// main()에서는 패키지(같은 폴더) 내부에 있는 클래스는 바로 참조가능 (L01Hellojava.java)
-
+// main()에서는 패키지(같은 폴더) 내부에 있는 클래스는 모두 바로 참조가능 (L01Hellojava.java)
 
 //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ main은 불러와서 서비스를 굴리는 코딩을 짜는 공간
 
 public class L09ClassType {
-   // main = 어플의 실행의 집합 == 어플 ( L09ClassType.main() )
+   // 내부 class를 여기에서 정의할 수도 있음
+
    public static void main(String[] args) {
+      // main = 어플의 실행의 집합 == 어플 ( L09ClassType.main() )
       /*  Class와 Type는 같은 말로 씀
       Class는 자료형 데이터의 타입        */
 
-      new DataType(); // 객체를 생성한 것.
-      DataType data = new DataType(); // 객체를 생성하면서 동시에 변수에 참조하는 것.
+      // new DataType(); // 객체를 생성한 것.
+      DataType data = new DataType("최경민"); // 객체를 생성하면서 동시에 변수에 참조하는 것.
       // [js에서는] const data = new DataType();
       // js는 타입을 명시하지 않는다. -> 동적 타입언어 (객체의 타입을 엔진이 알아서 정의
 
+
+      // class의 필드 접근하기
       System.out.println((data.age));
       System.out.println((data.name));
       // [js에서는] {age:38, name:"최경민"} 이렇게 리터럴하게 객체를 정의할 수 있음
+
 
       // 메서드 실행하기
       data.add(100, 201);
@@ -109,13 +115,14 @@ public class L09ClassType {
 
       data.add(123, 456, 678);
 
+
 //      ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
       data = new DataType("홍길동");
       System.out.println(data.name);
 
-      data = new DataType("둘리", "50");
-      System.out.println(data.name, data.age);
+      data = new DataType("둘리",50);
+      System.out.println(data.name + data.age);
 
    }
 }
