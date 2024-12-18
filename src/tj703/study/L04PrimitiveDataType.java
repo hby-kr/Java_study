@@ -105,3 +105,187 @@ public class L04PrimitiveDataType {
 
    boolean - true 또는 false 값을 갖는 논리형 / 예: boolean h = true;
  */
+
+
+/*
+>>> java에서 기본형데이터의 랩퍼클래스
+Java에서 기본형 데이터 타입은 primitive types라고 불리며, 이들 각각에는 대응하는 Wrapper 클래스가 있습니다.
+기본형데이터는 소문자로 쓰고, 자료형은 대문자로 시작.
+   boolean → Boolean,
+   byte → Byte,
+   char → Character,
+   short → Short,
+   int → Integer,
+   long → Long,
+   float → Float,
+   double → Double
+
+
+랩퍼클래스의 공통적으로 제공되는 기능들:
+   1. valueOf(): (원시형 → 객체)   기본형 "값"을 대응하는 래퍼 클래스의 객체로 변환합니다. (원시형->객체)
+   2. parseX(): (문자열 → 기본형)  문자열을 해당 기본형 값으로 변환합니다
+         (X는 해당 기본형을 의미, 예: parseInt, parseDouble, parseBoolean, parseByte, parseShort 등).
+   3. toString(): (기본형 → 문자열)  객체를 문자열로 변환합니다.
+   4. compareTo(): 다른 객체와 비교하여 순서를 결정합니다.
+   5. XValue():  (객체 → 기본형)  객체를 해당 기본형 값으로 반환합니다
+         (intValue(), doubleValue() 등).
+
+
+변환,반환하는 대상은 셋. [ 기본형데이터, 객체, 문자열 ]
+
+1. (원시형->객체) 기본형을 객체로 변환 (박싱, Autoboxing)
+기본형 타입은 값을 저장하는데 사용되며 객체처럼 다룰 수 없습니다.
+반면, 객체는 메서드와 속성을 가질 수 있기 때문에, 기본형을 객체로 변환하면 다양한 객체 관련 작업을 할 수 있습니다
+예를 들어, 객체는 null을 가질 수 있으며, equals() 같은 메서드를 사용하여 비교할 수 있습니다.
+
+기본형 값을 객체로 변환하는 것은 박싱(Boxing) 또는 **자동 박싱(Autoboxing)**이라고 합니다.
+박싱(Boxing): 기본형 값을 래퍼 클래스로 감싸서 객체로 변환하는 것.
+자동 박싱(Autoboxing): 기본형 값을 래퍼 클래스의 객체로 자동으로 변환하는 기능
+
+객체화의 결과
+메서드 사용 가능: 래퍼 클래스에서 제공하는 다양한 메서드들을 사용가능
+null 가능: 기본형은 null 값을 가질 수 없지만, 객체는 null을 가질 수 있습니다.
+
+
+2. (원시형 → 문자열) 기본형을 문자열로 변환
+문자열은 텍스트 데이터이기 때문에 기본형을 문자열로 변환하면 해당 값을 텍스트 형식으로 다룰 수 있음
+이는 사용자에게 데이터를 출력하거나 파일로 저장할 때 유용합니다.
+
+변환 메서드: String.valueOf()나 toString() 메서드를 사용하여 기본형을 문자열로 변환
+
+그 결과:
+텍스트 형식: 기본형 값을 문자열로 변환하여 출력하거나 저장할 수 있습니다.
+문자열 조작 가능: 변환된 문자열을 조작하거나 파일에 저장할 때 유용합니다
+
+ㅡㅡㅡㅡ
+3. 기본형, 객체, 문자열의 차이점
+1) 기본형 (Primitive Type):
+   저장된 값만을 다루며, 객체처럼 메서드나 속성을 가질 수 없습니다.
+   예: int, double, boolean 등
+2) 객체 (Wrapper Class):
+   기본형을 객체로 감싼 클래스로, 기본형을 객체처럼 다룰 수 있습니다.
+   예: Integer, Double, Boolean 등
+   객체는 null 값을 가질 수 있으며, 메서드를 호출할 수 있습니다.
+3) 문자열 (String):
+   텍스트로 데이터를 다룰 때 사용됩니다.
+   기본형과는 다르게 문자들을 조합하여 문자열을 표현합니다.
+
+ㅡㅡㅡㅡ
+다시 한 번 보면
+   1. valueOf():  (원시형 → 객체)   기본형 "값"을 대응하는 래퍼 클래스의 객체로 변환합니다.
+   3. toString(): (원시형 → 문자열)  객체를 문자열로 변환합니다.
+
+   2. parseX():  (문자열 → 기본형)  문자열을 해당 기본형 값으로 변환합니다
+   5. XValue():  (객체  → 기본형)   객체를 해당 기본형 값으로 반환합니다
+         (X는 해당 기본형을 의미, 예: parseInt, parseDouble, parseBoolean, parseByte, parseShort 등).
+         (intValue(), doubleValue() 등).
+   4. compareTo(): 다른 객체와 비교하여 순서를 결정합니다.
+
+
+1. valueOf(); (원시형->객체)
+
+// Integer (int)
+int num = 100;
+Integer intObj = Integer.valueOf(num); // 기본형 int를 Integer 객체로 변환
+
+// Double (double)
+double pi = 3.14159;
+Double doubleObj = Double.valueOf(pi); // 기본형 double을 Double 객체로 변환
+
+
+3. toString(); (원시형 → 문자열)
+
+// Integer (int)
+Integer intObj = 100;
+String intStr = intObj.toString(); // Integer 객체를 문자열로 변환 ("100")
+
+// Double (double)
+Double doubleObj = 3.14;
+String doubleStr = doubleObj.toString(); // Double 객체를 문자열로 변환 ("3.14")
+
+
+2. parseX();  문자열을 해당 기본형 값으로 변환
+예: parseInt, parseDouble, parseBoolean, parseByte, parseShort 등
+
+// Integer (int)
+String intStr = "123";
+int parsedInt = Integer.parseInt(intStr); // 문자열 "123"을 int로 변환
+
+// Double (double)
+String doubleStr = "3.14";
+double parsedDouble = Double.parseDouble(doubleStr); // 문자열 "3.14"을 double로 변환
+
+
+
+4. compareTo() ; 다른 객체와 비교하여 순서를 결정. 두 객체를 비교하여 정수 값(-1, 0, 1)을 반환
+// Integer (int)
+Integer intObj1 = 100;
+Integer intObj2 = 200;
+int comparisonResult = intObj1.compareTo(intObj2); // 100과 200 비교 (결과: -1)
+
+// Double (double)
+Double doubleObj1 = 3.14;
+Double doubleObj2 = 2.71;
+int comparisonResultDouble = doubleObj1.compareTo(doubleObj2); // 3.14와 2.71 비교 (결과: 1)
+
+
+5. XValue();  객체를 해당 기본형 값으로 반환합니다. (intValue(), doubleValue() 등)
+
+// Integer (int)
+Integer intObj = 100;
+int intValue = intObj.intValue(); // Integer 객체에서 기본형 int 값을 추출 (100)
+
+// Double (double)
+Double doubleObj = 3.14;
+double doubleValue = doubleObj.doubleValue(); // Double 객체에서 기본형 double 값을 추출 (3.14)
+
+
+전체 예시 코드
+
+ */
+
+class WrapperExamples {
+   public static void main(String[] args) {
+      // valueOf()
+      Integer intObj = Integer.valueOf(100);
+      Double doubleObj = Double.valueOf(3.14);
+      System.out.println("Integer valueOf: " + intObj); // 100
+      System.out.println("Double valueOf: " + doubleObj); // 3.14
+
+      // parseX()
+      int parsedInt = Integer.parseInt("123");
+      double parsedDouble = Double.parseDouble("3.14");
+      System.out.println("Parsed Integer: " + parsedInt); // 123
+      System.out.println("Parsed Double: " + parsedDouble); // 3.14
+
+      // toString()
+      String intStr = intObj.toString();
+      String doubleStr = doubleObj.toString();
+      System.out.println("Integer toString: " + intStr); // "100"
+      System.out.println("Double toString: " + doubleStr); // "3.14"
+
+      // compareTo()
+      int comparisonResult = intObj.compareTo(200);
+      int comparisonResultDouble = doubleObj.compareTo(2.71);
+      System.out.println("Integer compareTo: " + comparisonResult); // -1
+      System.out.println("Double compareTo: " + comparisonResultDouble); // 1
+
+      // XValue()
+      int intValue = intObj.intValue();
+      double doubleValue = doubleObj.doubleValue();
+      System.out.println("Integer value: " + intValue); // 100
+      System.out.println("Double value: " + doubleValue); // 3.14
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
