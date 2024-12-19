@@ -34,7 +34,7 @@ public class H01Random_while_trycatch {
                      System.out.println("정답입니다. 게임을 종료합니다.");
                      game = false;
                      // break; 얘를 써도 됨
-                     //    break: 반복문이나 switch 문을 완전히 종료합니다.
+                     //    break: 반복문이나 반복문을 그 자리에서 곧장 완전히 종료합니다.
                      //    continue: 반복문의 현재 반복을 건너뛰고, 다음 반복으로 넘어갑니다.
 
                   } else if (inputNum > num) {
@@ -76,3 +76,10 @@ public class H01Random_while_trycatch {
 
 // 5회만에 맞추기.
 // 게임을 무한히 반복시켜라.
+
+/* 라벨링 label
+
+자바에서 라벨은 주로 break나 continue 문과 함께 사용되어, 중첩된 반복문에서 특정 반복문을 종료하거나 건너뛰는 데 사용
+
+
+*/
