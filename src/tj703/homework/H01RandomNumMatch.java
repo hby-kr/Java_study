@@ -1,4 +1,4 @@
-package com.tj703.homewok;
+package tj703.homework;
 
 import java.util.Scanner;
 
@@ -12,7 +12,8 @@ public class H01RandomNumMatch {
       boolean game = true;
       int count = 0;
 
-         Scanner scanner = new Scanner(System.in);
+      Scanner scanner = new Scanner(System.in);
+
       while (game) {
          String inputNumStr = scanner.nextLine();
          //정답을 5번 안에 맞추도록 하세요!
@@ -25,24 +26,25 @@ public class H01RandomNumMatch {
             //1+(--count) : 1을 먼저더하고 count를 1빼라
             //1+(count--) : count를 1빼고 1을 더하라
             if (inputNum == num) {
-               System.out.println(count + " 시도 :정답!"); //break;
-               game = false;
-            } else {
-               if (count == 5) {
-                  System.out.println("졌습니다.");
-                  game = false;
-               } else {
-                  if (num < inputNum) {
-                     System.out.println("down");
-                  } else {
-                     System.out.println("up");
-                  }
-               }
+               System.out.println(count + " 시도 :정답!");
+               break;
+               // break를 쓰면, 여기서 반복문이 멈추므로 아래의 코드가 실행되지 않는다.
+               // 때문에 if else로 쓸 필요가 없는 것.
             }
+            if (count == 5) {
+               System.out.println("졌습니다.");
+               break;
+            }
+            if (num < inputNum) {
+               System.out.println("down");
+            } else {
+               System.out.println("up");
+            }
+
          } catch (NumberFormatException e) {
             System.out.println("숫자만 입력하세요.");
          }
       }
    }
 }
-// if else 안에 또 if else 스코프가 많아 지저분함 
+
