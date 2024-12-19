@@ -6,8 +6,10 @@ public class H01RandomNumMatch {
    public static void main(String[] args) {
 
       boolean game = true;
+      gameLoop:
       while (game) {
 
+         System.out.println("--------------------------------");
          System.out.println("랜덤한게 생성한 (1~50)수를 맞추세요! ");
          System.out.println("exit를 입력하면 게임이 종료됩니다 ");
          double random = Math.random();
@@ -28,6 +30,9 @@ public class H01RandomNumMatch {
                ++count;
                //1+(--count) : 1을 먼저더하고 count를 1빼라
                //1+(count--) : count를 1빼고 1을 더하라
+
+               System.out.println(count + " 시도 / 총 5회중");
+
                if (inputNum == num) {
                   System.out.println(count + " 시도 :정답!");
                   break;
@@ -47,8 +52,11 @@ public class H01RandomNumMatch {
             } catch (NumberFormatException e) {
                if (inputNumStr.equals("exit")) {
                   System.out.println("어플이 종료됩니다.");
-                  game = false; //전체 while 를 break 할 수 없어서 game=false 로 종료
-                  break; //내부 while break;
+
+                  // game = false; //전체 while 를 break 할 수 없어서 game=false 로 종료
+                  // break; //내부 while break;
+
+                  break gameLoop;
                }
                System.out.println("숫자만 입력하세요.");
             }
