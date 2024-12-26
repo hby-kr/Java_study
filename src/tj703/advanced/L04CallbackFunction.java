@@ -1,5 +1,5 @@
 package tj703.advanced;
-//l03은 l02 더 쉽게 복습
+//l03은 l02 더 쉽게 복습. 그래서 따로 안 적음.
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,18 +27,21 @@ class CallbackBtn {
 
 
 public class L04CallbackFunction {
-
-   JFrame frame=null;
-   JButton btn=null;
-   JLabel label=null;
-   class BtnHandler implements ActionListener{
+   static JFrame frame=null;
+   static JButton btn=null;
+   static JLabel label=null;
+   // static class라고 쓰는 것은 정적 중첩 클래스다.
+   static class BtnHandler implements ActionListener{
       @Override
       public void actionPerformed(ActionEvent e) {
          label.setText(label.getText()+"클릭");
       }
    }
-   //main 완전히 다른영역 => 클래스의 필드를 사용하려면 인스턴스화(객체생성)
-   // (static)
+   // main 완전히 다른영역 => 클래스의 필드를 사용하려면 인스턴스화(객체생성)
+   // but static을 사용하면 해결됨
+   // static: 필드와 상관없이 미리 메모리에 저장해놓는 것. 인스턴스객체를 만들지 않고, 접근할 수 있음.
+   // static class : 정적 중첩 클래스다. 외부의 클래스와 별개로 인스턴스화 가능.
+
 
    public static void main(String[] args) {
       // 콜백함수 : 정의해놓으면 바로 실행하지 않고, 호출될 때만 실행하는 메서드
@@ -93,8 +96,8 @@ public class L04CallbackFunction {
        */
 
 
-
       // 방법2 ㅡㅡㅡㅡㅡㅡㅡㅡㅡ 위에서 inner클래스로 작업하고 내려와서 작성한거임.
+/*
       L04CallbackFunction o=new L04CallbackFunction();
       o.frame=new JFrame("콜백함수의 이해");
       o.frame.setBounds(500,1500,300,300);
@@ -105,6 +108,19 @@ public class L04CallbackFunction {
       o.label=new JLabel("나는 라벨입니다.");
       o.frame.add(o.label);
       o.frame.setVisible(true);
+ */
+
+      // 방법3  ㅡㅡㅡㅡㅡㅡㅡㅡㅡ + static 써서 코드하기.
+      frame=new JFrame("콜백함수의 이해");
+      frame.setBounds(500,500,300,300);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      btn=new JButton("버튼입니다.");
+      btn.addActionListener(new BtnHandler());
+      //btn.addActionListener(new L04CallbackFunction.new BtnHandler()); 와 같은 것.
+      frame.add(btn, BorderLayout.SOUTH);
+      label=new JLabel("나는 라벨입니다.");
+      frame.add(label);
+      frame.setVisible(true);
 
 
    }
