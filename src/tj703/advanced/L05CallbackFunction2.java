@@ -30,7 +30,16 @@ class ClickGameFrame extends JFrame { // 나 자신이 프레임이 되겠다.
          }
       });
 
-      southBtn.addActionListener(new ResetBtnHandler());
+//      southBtn.addActionListener(new ResetBtnHandler());
+      // 자바에서 콜백함수를 정의해서 매개변수를 쓰려면 코드도 길고 복잡하다. => 익명함수 쓰면 되잖아?
+      // 그대로 길어. (jvm -> 문법을 달리하는 "코틀린" 언어를 만듬)
+      // 자바도 (코드가 심플한)함수형 언어처럼, 매개변수를 함수로 보낼 수 있어!! => 람다식
+      // 아래처럼...
+      southBtn.addActionListener(
+            (e) -> {
+               label.setText("");
+            }
+      );
 
       this.add(northBtn, BorderLayout.NORTH);
       this.add(southBtn, BorderLayout.SOUTH);
@@ -42,20 +51,16 @@ class ClickGameFrame extends JFrame { // 나 자신이 프레임이 되겠다.
       this.setVisible(true);
    }
 
-   class ResetBtnHandler implements ActionListener{
+   class ResetBtnHandler implements ActionListener {
       @Override
       public void actionPerformed(ActionEvent e) {
          label.setText("초기화");
       }
    }
-
 }
 
-
 public class L05CallbackFunction2 {
-
    public static void main(String[] args) {
       new ClickGameFrame(); // 여기서 객체를 만들자마자, 화면에 바로 뜨게 만들어보자.
    }
-
 }
