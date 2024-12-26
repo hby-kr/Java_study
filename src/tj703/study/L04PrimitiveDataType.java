@@ -1,5 +1,32 @@
 package tj703.study;
 
+/*
+ >>> Java의 기본 데이터 타입
+   Java는 **강타입 언어(strongly typed language)**로,
+   변수에 저장되는 데이터 타입을 명시해야 하며, 데이터 타입에 대한 규칙이 엄격합니다.
+
+   Java의 기본 데이터 타입은 크게
+   **원시타입(Primitive types)**과
+   **참조 타입(Reference types)**으로 나눌 수 있습니다.
+
+   > 기본형 데이터 / 원시 타입 데이터 (Primitive types)
+   byte - 8비트 정수 / 예: byte c = 127;
+   short - 16비트 정수 / 예: short d = 1000;
+   long - 64비트 정수 / 예: long b = 100L; (접미사 L 필수)
+   int - 32비트 정수 / 예: int a = 10;
+      (다양한 정수 종류가 있는 이유는, 메모리 관리와 성능 최적화, 데이터 범위에 대한 명확한 의도 표현 등을 위해서임)
+
+   float - 32비트 부동소수점 (단정도 실수) / 예: float e = 10.5f; (접미사 f 필수)
+   double - 64비트 부동소수점 (배정도 실수) / 예: double f = 3.14;
+   Number (js에서는 모든 정수와 실수를 Number 타입으로 처리)
+
+   char - 16비트 유니코드 문자 / 예: char g = 'A';
+      js에서는 문자와 문자열을 모둑 String 타입으로 처리)
+      문자열이 js에서는 기본형, java에서는 자료형
+
+   boolean - true 또는 false 값을 갖는 논리형 / 예: boolean h = true;
+ */
+
 public class L04PrimitiveDataType {
    public static void main(String[] args) {
 
