@@ -75,12 +75,12 @@ public class L09StreamAPI {
          System.out.println("평균값은" + n);
       });
        */
-
-      numArrstreams2
-            .map((n)->{return n/10};)
-            .forEach((n)->{
-         System.out.println("sdsf");
-      });
+//
+//      numArrstreams2
+//            .map((n)->{return n/10};)
+//            .forEach((n)->{
+//         System.out.println("sdsf");
+//      });
 
       // stream은 체이닝이 가능함.
 

@@ -3,9 +3,8 @@ package tj703.advanced;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowListener;
-import java.net.InterfaceAddress;
 
-public class L02anonymousClass {
+public class L02AnonymousClass {
    public static void main(String[] args) {
 
       Frame frame = new Frame("익명클래스");
@@ -36,3 +35,29 @@ public class L02anonymousClass {
    }
 }
 //l03은 l02 더 쉽게 복습
+
+/*
+java로 코딩을 할 때 익명함수를 써야하는 경우는???
+
+1. . 짧은 함수 정의가 필요할 때
+익명 함수는 작은, 즉시 사용할 함수를 정의할 때 유용합니다. 예를 들어, 한 번만 사용할 간단한 함수가 필요할 때
+
+2. 콜백이나 이벤트 처리 시
+Java에서 이벤트 리스너나 콜백을 정의할 때 익명 클래스를 많이 사용합니다. 예를 들어, GUI 프로그램에서 버튼 클릭이나 사용자 이벤트를 처리할 때
+
+3. Functional Interface와 함께 사용할 때 (Java 8 이상의 경우)
+Java 8부터는 람다 표현식(lambda expression)을 사용하여 익명 함수의 형태로 코드를 작성할 수 있습니다. Runnable, Comparator, Predicate 등과 같은 함수형 인터페이스를 사용할 때
+
+4. 특정 기능을 가진 객체가 일회성으로 필요한 경우
+특정 기능을 가진 객체를 한 번만 사용하고, 그 객체를 재사용하지 않을 경우
+List<String> names = Arrays.asList("John", "Jane", "Jack");
+names.forEach(name -> System.out.println(name));
+위의 예시에서 forEach 메서드에 전달된 name -> System.out.println(name)은 간단한 익명 함수입니다.
+
+5. 추상 클래스나 인터페이스 구현 시
+인터페이스나 추상 클래스를 구현하는 클래스가 한 번만 사용되거나 매우 간단할 때,
+
+
+
+
+ */
