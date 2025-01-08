@@ -1,33 +1,36 @@
-
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 SQL라를 언어의 여러 구문들을 분류해보자
-데이터베이스에서 데이터를 다루는 언어의 두 가지 주요 카테고리
 
-DML (Data Manipulation Language): 데이터 삽입, 수정, 삭제
-DQL (Data Query Language): 데이터 조회
-DDL (Data Definition Language): 데이터베이스 구조 정의 및 관리
-DCL (Data Control Language): 데이터베이스 권한 제어
-TCL (Transaction Control Language): 트랜잭션 관리
+데이터베이스에서 데이터를 다루는 언어의 두 가지 주요 카테고리
+   DQL (Data Query Language): 데이터 조회
+   DML (Data Manipulation Language): 데이터 삽입, 수정, 삭제
+
+   DDL (Data Definition Language): 데이터베이스 구조 정의 및 관리
+   DCL (Data Control Language): 데이터베이스 권한 제어
+   TCL (Transaction Control Language): 트랜잭션 관리
 
 ㅡㅡㅡㅡㅡㅡㅡ
 DML / DQL 
-   DML (Data Manipulation Language)과 DQL (Data Query Language)
-   DML은 데이터의 변경을 담당하고, DQL은 조회만 담당합니다.
-   DML: 데이터를 삽입(INSERT), 수정(UPDATE), 삭제(DELETE)하는 명령어들.
-   DQL: 데이터를 조회(SELECT)하는 명령어.
+   DQL (Data Query Language) 데이터를 조회(SELECT)하는 명령어.
+   DML (Data Manipulation Language)
+      DML은 데이터의 변경을 담당하고, DQL은 조회만 담당합니다.
+      데이터를 삽입(INSERT), 수정(UPDATE), 삭제(DELETE)하는 명령어들.
 
-ㅡㅡㅡㅡㅡㅡㅡ
-그 밖에 카테고리 
-DDL (Data Definition Language): 데이터베이스 구조 정의 및 관리
-   CREATE: 새로운 테이블, 뷰, 인덱스 등을 생성
-   ALTER: 기존 테이블의 구조를 변경 (예: 열 추가, 삭제)
-   DROP: 테이블, 뷰, 인덱스 등을 삭제
-   TRUNCATE: 테이블의 데이터를 삭제하지만 테이블 구조는 유지
-DCL (Data Control Language): 데이터베이스 권한 제어
-   GRANT: 사용자가 특정 권한을 부여받을 수 있도록 함
-   REVOKE: 사용자가 가지고 있던 권한을 철회
-TCL (Transaction Control Language): 트랜잭션 관리,제어
-   트랜잭션은 데이터베이스 작업의 논리적인 단위로, 작업이 완료되었을 때 데이터를 확정하거나 취소할 수 있습니다.
+   그 밖에 카테고리 
+      DDL (Data Definition Language): 데이터베이스 구조 정의 및 관리
+         CREATE: 새로운 테이블, 뷰, 인덱스 등을 생성
+         ALTER: 기존 테이블의 구조를 변경 (예: 열 추가, 삭제)
+         DROP: 테이블, 뷰, 인덱스 등을 삭제
+         TRUNCATE: 테이블의 데이터를 삭제하지만 테이블 구조는 유지
+         RENAME: (데이터베이스 객체 이름 변경)
+
+      TCL (Transaction Control Language): 트랜잭션 관리,제어
+         트랜잭션은 데이터베이스 작업의 논리적인 단위로, 작업이 완료되었을 때 데이터를 확정하거나 취소할 수 있습니다.
+         COMMIT(트랜잭션의 정상적인 종료 처리)
+         ROLLBACK(트랜잭션취소)
+         SAVEPOINT(트랜잭션 내에 임시 저장점 설정)
+      DCL (Data Control Language): 데이터베이스 권한 제어
+         GRANT: 사용자가 특정 권한을 부여받을 수 있도록 함
+         REVOKE: 사용자가 가지고 있던 권한을 철회
 
 ㅡㅡㅡㅡㅡㅡㅡ
 다섯 가지 주요 카테고리 외의 명령어:
@@ -41,8 +44,8 @@ MySQL: LOAD DATA, START TRANSACTION
 PostgreSQL: VACUUM, COPY
 Oracle: FLASHBACK, ALTER SYSTEM
 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\
 SQL 기본 명령어 익히기
 
 1. MySQL에 접속하기
@@ -113,9 +116,8 @@ SQL 기본 명령어 익히기
    DELETE FROM employees WHERE employee_id = 1;
    employee_id가 1인 직원의 데이터를 삭제합니다.
 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
-
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 적는 순서
 SELECT - DISTINCT -FROM - JOIN - ON - WHERE - GROUP BY - HAVING - ORDER BY - LIMIT - OFFSET
 
@@ -256,7 +258,7 @@ JOIN: 여러 테이블을 결합하여 데이터를 조회합니다.
 
 
 ㅡㅡㅡㅡ
->> SQL에서 AS는 **별칭(alias)**을 지정하는 데 사용되는 선택적 키워드.
+>> SQL에서 AS는 별칭(alias)을 지정하는 데 사용되는 선택적 키워드.
 선택적이라, AS를 생략하고도 컬럼이나 결과 값에 직접 새로운 이름을 지정할 수 있습니다.
 
 > 일반 데이터 불러오기에 이름 붙이기
@@ -293,8 +295,13 @@ SQL 구문 순서:
    GROUP BY column1
    ORDER BY column1
    LIMIT 0, 10;
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
 WHERE 절과 함께 사용하는 조건 연산자
+
+1. 숫자인가?
+
    비교연산자
          = (같음)
          != 또는 <> (다름)
@@ -303,126 +310,135 @@ WHERE 절과 함께 사용하는 조건 연산자
          >= (크거나 같다)
          <= (작거나 같다)
    BETWEEN (범위 내 포함)
-   LIKE (패턴 매칭)
+
+2. 문자인가? 
+
    IN (목록에 포함)
+
+3. 그 밖에
+   LIKE (패턴 매칭)
    IS NULL (NULL 값 체크)
-   복합조건
-         AND (복수 조건 만족)
-         OR (조건 중 하나 만족)
-         NOT (조건이 특정 반대인 데이터 찾기)
-ㅡㅡㅡㅡ
-= (같음) ; 특정 값과 정확히 일치하는 데이터를 찾을 때 사용
-   SELECT * FROM employees WHERE department = 'Sales';
-      'Sales' 부서에 속하는 모든 직원들의 정보를 조회하면서, department가 'Sales'인 직원들을 찾는 경우. 사용
 
-!= 또는 <> (다름) ; != 또는 <>는 특정 값과 다른 데이터를 찾을 때 사용
-   SELECT * FROM employees WHERE department != 'Sales';  
-      employees 테이블에서 department가 'Sales'가 아닌 직원들을 찾는 경우.
+4. 복합조건
+      AND (복수 조건 만족)
+      OR (조건 중 하나 만족)
+      NOT (조건이 특정 반대인 데이터 찾기)
 
-특정 값보다 크거나, 작거나, 크거나 같거나, 작거나 같거나한 데이터를 찾을 때 사용
-> (크다)   /  < (작다)  /  >= (크거나 같다)  / <= (작거나 같다) 
-SELECT * FROM employees WHERE age > 30;
-   employees 테이블에서 나이가 30세 이상인 직원들을 찾는 경우.
-SELECT * FROM employees WHERE age < 30;
-   employees 테이블에서 나이가 30세 미만인 직원들을 찾는 경우.
-SELECT * FROM employees WHERE salary >= 50000;
-   employees 테이블에서 연봉이 50,000 이상인 직원들을 찾는 경우
-SELECT * FROM employees WHERE salary <= 50000;
-   employees 테이블에서 연봉이 50,000 이하인 직원들을 찾는 경우
+ㅡㅡㅡㅡㅡㅡㅡㅡ  구체적 설명
 
+      = (같음) ; 특정 값과 정확히 일치하는 데이터를 찾을 때 사용
+         SELECT * FROM employees WHERE department = 'Sales';
+            'Sales' 부서에 속하는 모든 직원들의 정보를 조회하면서, department가 'Sales'인 직원들을 찾는 경우. 사용
 
-BETWEEN (범위 내 포함) ; 두 값 사이의 범위 내에 포함된 데이터를 찾을 때 사용 
-   SELECT * FROM employees WHERE age BETWEEN 25 AND 35;
-      employees 테이블에서 나이가 25세 이상 35세 이하인 직원들을 찾는 경우.
+      != 또는 <> (다름) ; != 또는 <>는 특정 값과 다른 데이터를 찾을 때 사용
+         SELECT * FROM employees WHERE department != 'Sales';  
+            employees 테이블에서 department가 'Sales'가 아닌 직원들을 찾는 경우.
 
-LIKE (패턴 매칭) ;  문자열에서 특정 패턴을 만족하는 데이터를 찾을 때 사용
-   SELECT * FROM employees WHERE name LIKE 'J%';
-      employees 테이블에서 이름이 'J'로 시작하는 직원들을 찾는 경우
-
-IN (목록에 포함); 특정 열의 값이 여러 값 중 하나와 일치하는 데이터를 찾을 때 사용
-   SELECT * FROM employees WHERE department IN ('Sales', 'Marketing');
-      employees 테이블에서 부서department가 'Sales' 또는 'Marketing'인 직원들을 찾는 경우.
-
-      IN 연산자는 지정된 열의 값이 value1, value2, ... 중 하나와 일치하면 조건이 참이 됩니다.
-      1. 단순 비교
-      특정 값들 중 하나를 만족하는 행을 선택하는 예시입니다.
-      2. 숫자 값 비교
-      숫자 값을 비교할 때도 IN을 사용할 수 있습니다.
-      3. 서브쿼리 사용
-      IN 연산자는 서브쿼리와 함께 사용할 수 있습니다. 
-         SELECT first_name, last_name 
-         FROM employees
-         WHERE department IN (SELECT department FROM departments WHERE location = 'New York');
-      4. NOT IN
-      IN의 반대 연산자인 NOT IN은 특정 값들 중 하나도 일치하지 않는 행을 선택할 때 사용됩니다.
-         SELECT * 
-         FROM employees
-         WHERE department NOT IN ('Sales', 'Marketing');
-
-   -- addr 컬럼값이 경기, 전남, 경남인 데이터 조회
-      SELECT * FROM member 
-         WHERE addr IN('경기', '전남', '경남');
-
-      SELECT * FROM member
-         WHERE addr = '경기' OR addr = '전남' OR addr = '경남';
+      특정 값보다 크거나, 작거나, 크거나 같거나, 작거나 같거나한 데이터를 찾을 때 사용
+      > (크다)   /  < (작다)  /  >= (크거나 같다)  / <= (작거나 같다) 
+      SELECT * FROM employees WHERE age > 30;
+         employees 테이블에서 나이가 30세 이상인 직원들을 찾는 경우.
+      SELECT * FROM employees WHERE age < 30;
+         employees 테이블에서 나이가 30세 미만인 직원들을 찾는 경우.
+      SELECT * FROM employees WHERE salary >= 50000;
+         employees 테이블에서 연봉이 50,000 이상인 직원들을 찾는 경우
+      SELECT * FROM employees WHERE salary <= 50000;
+         employees 테이블에서 연봉이 50,000 이하인 직원들을 찾는 경우
 
 
-IS NULL (NULL 값 체크);  특정 열의 값이 NULL인 데이터를 찾을 때 사용
-   SELECT * FROM employees WHERE department IS NULL;
-      employees 테이블에서 부서가 할당되지 않은 직원을 찾는 경우.
+      BETWEEN (범위 내 포함) ; 두 값 사이의 범위 내에 포함된 데이터를 찾을 때 사용 
+         SELECT * FROM employees WHERE age BETWEEN 25 AND 35;
+            employees 테이블에서 나이가 25세 이상 35세 이하인 직원들을 찾는 경우.
+
+      LIKE (패턴 매칭) ;  문자열에서 특정 패턴을 만족하는 데이터를 찾을 때 사용
+         SELECT * FROM employees WHERE name LIKE 'J%';
+            employees 테이블에서 이름이 'J'로 시작하는 직원들을 찾는 경우
+
+      IN (목록에 포함); 특정 열의 값이 여러 값 중 하나와 일치하는 데이터를 찾을 때 사용
+         SELECT * FROM employees WHERE department IN ('Sales', 'Marketing');
+            employees 테이블에서 부서department가 'Sales' 또는 'Marketing'인 직원들을 찾는 경우.
+
+            IN 연산자는 지정된 열의 값이 value1, value2, ... 중 하나와 일치하면 조건이 참이 됩니다.
+            1. 단순 비교
+            특정 값들 중 하나를 만족하는 행을 선택하는 예시입니다.
+            2. 숫자 값 비교
+            숫자 값을 비교할 때도 IN을 사용할 수 있습니다.
+            3. 서브쿼리 사용
+            IN 연산자는 서브쿼리와 함께 사용할 수 있습니다. 
+               SELECT first_name, last_name 
+               FROM employees
+               WHERE department IN (SELECT department FROM departments WHERE location = 'New York');
+            4. NOT IN
+            IN의 반대 연산자인 NOT IN은 특정 값들 중 하나도 일치하지 않는 행을 선택할 때 사용됩니다.
+               SELECT * 
+               FROM employees
+               WHERE department NOT IN ('Sales', 'Marketing');
+
+         -- addr 컬럼값이 경기, 전남, 경남인 데이터 조회
+            SELECT * FROM member 
+               WHERE addr IN('경기', '전남', '경남');
+
+            SELECT * FROM member
+               WHERE addr = '경기' OR addr = '전남' OR addr = '경남';
 
 
-AND (복수 조건 만족);  여러 조건을 모두 만족하는 데이터를 찾을 때 사용
-   SELECT * FROM employees WHERE age > 30 AND salary > 50000;
-      employees 테이블에서 나이가 30세 이상이고 연봉이 50,000 이상인 직원을 찾는 경우.
-
-OR (조건 중 하나라도 만족);  여러 조건 중 하나라도 만족하는 데이터를 찾을 때 사용
-   SELECT * FROM employees WHERE age > 30 OR department = 'Sales';
-      employees 테이블에서 나이가 30세 이상이거나 부서가 'Sales'인 직원을 찾는 경우.
-
-NOT (특정 조건을 반대로 바꾸는 역할)
-   SELECT * FROM employees WHERE NOT department = 'Sales';
-      employees 테이블에서 부서가 'Sales'가 아닌 직원들을 찾는 경우.
-
->> NOT을 좀 더 구체적으로 사용하기.
-
-NOT과 AND 결합 사용
-   SELECT * FROM employees WHERE NOT (age < 30 AND department = 'Sales');
-      employees 테이블에서 나이가 30세 미만이고 부서가 'Sales'인 직원이 아닌 사람들을 찾고 싶은 경우.
-
-NOT과 OR 결합 사용
-   SELECT * FROM employees WHERE NOT (age < 30 OR department = 'Sales');
-      employees 테이블에서 나이가 30세 미만이거나 부서가 'Sales'인 직원이 아닌 사람들을 찾고 싶은 경우.
-
-NOT NULL: NULL이 아닌 값을 찾습니다
-   SELECT * FROM employees WHERE department IS NOT NULL;
-      employees 테이블에서 부서 정보가 존재하는 직원들을 찾는 경우.
-
-   SELECT * FROM orders WHERE order_date IS NOT NULL;
-      orders 테이블에서 주문 날짜가 존재하는 주문을 찾는 경우.
-
-NOT IN: 목록에 포함되지 않은 값을 찾습니다
-   SELECT * FROM employees WHERE department NOT IN ('Sales', 'Marketing');
-      employees 테이블에서 부서department가 'Sales' 또는 'Marketing'이 아닌 직원을 찾는 경우.
-
-   SELECT * FROM products WHERE category NOT IN ('Electronics', 'Furniture');
-      products 테이블에서 카테고리가 'Electronics' 또는 'Furniture'가 아닌 제품을 찾는 경우.
-
-NOT LIKE: 주어진 패턴과 일치하지 않는 값을 찾습니다
-   SELECT * FROM employees WHERE name NOT LIKE 'J%';
-      employees 테이블에서 이름이 **'J'**로 시작하지 않는 직원을 찾는 경우.
-
-   SELECT * FROM customers WHERE email NOT LIKE '%@example.com';
-      customers 테이블에서 이메일이 '@example.com' 도메인을 포함하지 않는 고객을 찾는 경우.
+      IS NULL (NULL 값 체크);  특정 열의 값이 NULL인 데이터를 찾을 때 사용
+         SELECT * FROM employees WHERE department IS NULL;
+            employees 테이블에서 부서가 할당되지 않은 직원을 찾는 경우.
 
 
-ㅡㅡㅡㅡ(LIKE 'J%' 와 같은 명령에 대해서)
+      AND (복수 조건 만족);  여러 조건을 모두 만족하는 데이터를 찾을 때 사용
+         SELECT * FROM employees WHERE age > 30 AND salary > 50000;
+            employees 테이블에서 나이가 30세 이상이고 연봉이 50,000 이상인 직원을 찾는 경우.
+
+      OR (조건 중 하나라도 만족);  여러 조건 중 하나라도 만족하는 데이터를 찾을 때 사용
+         SELECT * FROM employees WHERE age > 30 OR department = 'Sales';
+            employees 테이블에서 나이가 30세 이상이거나 부서가 'Sales'인 직원을 찾는 경우.
+
+      NOT (특정 조건을 반대로 바꾸는 역할)
+         SELECT * FROM employees WHERE NOT department = 'Sales';
+            employees 테이블에서 부서가 'Sales'가 아닌 직원들을 찾는 경우.
+
+      >> NOT을 좀 더 구체적으로 사용하기.
+
+      NOT과 AND 결합 사용
+         SELECT * FROM employees WHERE NOT (age < 30 AND department = 'Sales');
+            employees 테이블에서 나이가 30세 미만이고 부서가 'Sales'인 직원이 아닌 사람들을 찾고 싶은 경우.
+
+      NOT과 OR 결합 사용
+         SELECT * FROM employees WHERE NOT (age < 30 OR department = 'Sales');
+            employees 테이블에서 나이가 30세 미만이거나 부서가 'Sales'인 직원이 아닌 사람들을 찾고 싶은 경우.
+
+      NOT NULL: NULL이 아닌 값을 찾습니다
+         SELECT * FROM employees WHERE department IS NOT NULL;
+            employees 테이블에서 부서 정보가 존재하는 직원들을 찾는 경우.
+
+         SELECT * FROM orders WHERE order_date IS NOT NULL;
+            orders 테이블에서 주문 날짜가 존재하는 주문을 찾는 경우.
+
+      NOT IN: 목록에 포함되지 않은 값을 찾습니다
+         SELECT * FROM employees WHERE department NOT IN ('Sales', 'Marketing');
+            employees 테이블에서 부서department가 'Sales' 또는 'Marketing'이 아닌 직원을 찾는 경우.
+
+         SELECT * FROM products WHERE category NOT IN ('Electronics', 'Furniture');
+            products 테이블에서 카테고리가 'Electronics' 또는 'Furniture'가 아닌 제품을 찾는 경우.
+
+      NOT LIKE: 주어진 패턴과 일치하지 않는 값을 찾습니다
+         SELECT * FROM employees WHERE name NOT LIKE 'J%';
+            employees 테이블에서 이름이 'J'로 시작하지 않는 직원을 찾는 경우.
+
+         SELECT * FROM customers WHERE email NOT LIKE '%@example.com';
+            customers 테이블에서 이메일이 '@example.com' 도메인을 포함하지 않는 고객을 찾는 경우.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ(LIKE 'J%' 와 같은 명령에 대해서)
 + : 문자열을 연결 ‘골프 ’ + ‘바이블’ , ‘골프 바이블’
 % : 0개 이상의 문자열과 일치 ‘%축구%’ , 축구를 포함하는 문자열
 [ ] : 1개의 문자와 일치 ‘[0-5]%’ , 0-5 사이 숫자로 시작하는 문자열
 [^] : 1개의 문자와 불일치 ‘[^0-5]%’ , 0-5 사이 숫자로 시작하지 않는 문자열
 _ : 특정 위치의 1개의 문자와 일치 ‘구%’ : 두 번째 위치에 ‘구’가 들어가는 문자열
-ㅡㅡㅡㅡㅡㅡ
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 LIKE 와일드카드 문자
 1. %: 0개 이상의 문자와 일치.
@@ -544,51 +560,52 @@ UNION은 중복을 제거하고, UNION ALL은 중복을 허용.
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
->> **그룹 함수(Group Functions)**
+>> 그룹 함수(Group Functions)
+
 그룹 함수는 데이터 집합을 요약하거나 집계하는 데 사용되는 함수들
 그룹 함수는 GROUP BY 절과 함께 자주 사용되며, 결과 집합을 그룹으로 묶은 뒤 각 그룹에 대해 특정 계산을 수행
 
 대표적인 그룹 함수: COUNT(), SUM(), AVG(), MAX(), MIN()
-**GROUP BY**는 데이터를 그룹화하고, 
-**HAVING**은 그룹화된 데이터에 조건을 추가하는 데 사용됩니다.
 
-1.1. COUNT(): 행의 개수
-COUNT() 함수는 주어진 컬럼에 대해 값이 존재하는 행의 개수를 반환.
-NULL 값을 포함한 모든 행을 셈합니다.
+GROUP BY는 데이터를 그룹화하고, 
+HAVING은 그룹화된 데이터에 조건을 추가하는 데 사용됩니다.
 
-   SELECT COUNT(*) FROM employees;
-      employees 테이블에 있는 전체 직원 수를 반환합니다.
+   1.1. COUNT(): 행의 개수
+   COUNT() 함수는 주어진 컬럼에 대해 값이 존재하는 행의 개수를 반환.
+   NULL 값을 포함한 모든 행을 셈합니다.
 
-   SELECT department, COUNT(*) FROM employees GROUP BY department;
-      각 부서별 직원 수를 구합니다. GROUP BY department에 의해 부서별로 그룹화한 후, 각 부서의 직원 수를 셉니다.
+      SELECT COUNT(*) FROM employees;
+         employees 테이블에 있는 전체 직원 수를 반환합니다.
 
-1.2. SUM(): 합계
-SUM() 함수는 주어진 컬럼의 값들의 합계를 계산합니다. 보통 숫자형 데이터에 사용.
+      SELECT department, COUNT(*) FROM employees GROUP BY department;
+         각 부서별 직원 수를 구합니다. GROUP BY department에 의해 부서별로 그룹화한 후, 각 부서의 직원 수를 셉니다.
 
-   SELECT SUM(salary) FROM employees;
-   employees 테이블에서 모든 직원의 급여 총합을 반환합니다.
+   1.2. SUM(): 합계
+   SUM() 함수는 주어진 컬럼의 값들의 합계를 계산합니다. 보통 숫자형 데이터에 사용.
 
-   SELECT department, SUM(salary) FROM employees GROUP BY department;
-   설명: 각 부서별 급여 총합을 구합니다.
+      SELECT SUM(salary) FROM employees;
+      employees 테이블에서 모든 직원의 급여 총합을 반환합니다.
 
-1.3. AVG(): 평균
-AVG() 함수는 주어진 컬럼의 값들의 평균을 반환
+      SELECT department, SUM(salary) FROM employees GROUP BY department;
+      설명: 각 부서별 급여 총합을 구합니다.
 
-   SELECT department, AVG(salary) FROM employees GROUP BY department;
-   설명: employees 테이블에서 모든 직원의 평균 급여를 반환합니다.
+   1.3. AVG(): 평균
+   AVG() 함수는 주어진 컬럼의 값들의 평균을 반환
 
-1.4. MAX(): 최댓값
-MAX() 함수는 주어진 컬럼의 최댓값을 반환
+      SELECT department, AVG(salary) FROM employees GROUP BY department;
+      설명: employees 테이블에서 모든 직원의 평균 급여를 반환합니다.
 
-   SELECT department, MAX(salary) FROM employees GROUP BY department;
-   employees 테이블에서 직원들의 급여 중 가장 높은 급여를 반환합니다.
+   1.4. MAX(): 최댓값
+   MAX() 함수는 주어진 컬럼의 최댓값을 반환
 
-1.5. MIN(): 최솟값
-MIN() 함수는 주어진 컬럼의 최솟값을 반환
+      SELECT department, MAX(salary) FROM employees GROUP BY department;
+      employees 테이블에서 직원들의 급여 중 가장 높은 급여를 반환합니다.
 
-   SELECT department, MIN(salary) FROM employees GROUP BY department;
-   employees 테이블에서 직원들의 급여 중 가장 낮은 급여를 반환합니다.
+   1.5. MIN(): 최솟값
+   MIN() 함수는 주어진 컬럼의 최솟값을 반환
 
+      SELECT department, MIN(salary) FROM employees GROUP BY department;
+      employees 테이블에서 직원들의 급여 중 가장 낮은 급여를 반환합니다.
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
@@ -637,25 +654,104 @@ HAVING COUNT(*) > 10은 그룹화된 각 부서에 대해 직원 수가 10명 �
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 JOIN / ON
 
-ON은 SQL JOIN절에서 사용되는 "조건을 정의"하는 키워드
-즉, 두 테이블을 결합할 때 어떤 열을 기준으로 결합할지를 명시하는 부분
-
 조인(JOIN)의 기초 - Equi Join과 Non-Equi Join
    #EQUI JOIN 은 조인 조건식에 '='를 사용한다.  
    내가 한개의 테이블의 열의 정보를 알고있고 그것에 대한 다른 테이블의 정보를 알고 싶을때
 
-SQL Join의 종류
-INNER JOIN: 두 테이블에서 일치하는 데이터만 반환 (Equi Join 포함)
-   INNER JOIN/ 조건이 맞는 것만 출력
-LEFT JOIN (OUTER JOIN): 왼쪽 테이블의 모든 행을 반환하고, 일치하지 않으면 NULL
-RIGHT JOIN (OUTER JOIN): 오른쪽 테이블의 모든 행을 반환하고, 일치하지 않으면 NULL
-FULL JOIN (OUTER JOIN): 두 테이블의 모든 행을 반환하고, 일치하지 않으면 NULL
-CROSS JOIN: 두 테이블의 모든 가능한 조합을 반환
-   CROSS JOIN/ 해당 테이블이 모든 경우의 수를 갖는것 (곱 join이라 부름)
-Self Join: 같은 테이블을 두 번 이상 참조하여 결합
-Natural Join: 동일한 이름을 가진 열을 자동으로 기준으로 결합
-Theta Join: 다양한 비교 연산자(비등호 연산자)로 결합
+
+ON은 SQL JOIN절에서 두 테이블을 결합할 때
+어떤 열을 기준으로 결합할지를 명시하는 부분
+=  on 뒤에는 테이블 간의 연결 조건을 설정
+=  on 뒤에는 두 테이블을 "어떻게 연결할지"를 결정하는 조건을 적습니다.
+
+<두 테이블의 결합일 때>
+   SELECT Employees.name, Departments.name
+   FROM Employees
+   JOIN departments     // 추가할 
+   ON Employees.department_id = Departments.id;  // 조건
+
+<세 테이블의 결합일 때>
+각 직원의 이름, 부서 이름, 급여 정보를 결합하려면 다음과 같은 방식으로 SQL 쿼리를 작성할 수 있습니다.
+   SELECT Employees.name AS Employee_Name,
+         Departments.name AS Department_Name,
+         Salaries.amount AS Salary
+   FROM Employees
+   JOIN Departments
+      ON Employees.department_id = Departments.id
+   JOIN Salaries
+      ON Employees.id = Salaries.employee_id
+   WHERE Employees.salary > 50000;
+
+<네 테이블의 결합일 때>
+   SELECT Employees.name AS Employee_Name,
+         Departments.name AS Department_Name,
+         Salaries.amount AS Salary,
+         Locations.city AS Location
+   FROM Employees
+   JOIN Departments
+      ON Employees.department_id = Departments.id
+   JOIN Salaries
+      ON Employees.id = Salaries.employee_id
+   JOIN Locations
+      ON Departments.location_id = Locations.id
+   WHERE Employees.salary > 50000;
+
+
+< SQL Join의 종류 1 >
+   INNER JOIN: 두 테이블에서 일치하는 데이터만 반환 (Equi Join 포함)
+      INNER JOIN/ 조건이 맞는 것만 출력
+
+**INNER JOIN**은 두 테이블 사이에 일치하는 데이터만 결합합니다.
+**OUTER JOIN**은 일치하는 데이터가 없어도, 하나의 테이블의 모든 데이터를 반환하며, 일치하지 않는 데이터를 NULL로 채웁니다.
+
+왼쪽과 오른쪽의 기준:
+   왼쪽(Left): JOIN 연산에서 JOIN 키워드 앞에 위치한 테이블. -
+   오른쪽(Right): JOIN 연산에서 JOIN 키워드 뒤에 위치한 테이블.
+
+   LEFT JOIN (OUTER JOIN): 왼쪽 테이블의 모든 행을 반환하고, 일치하지 않으면 NULL
+   RIGHT JOIN (OUTER JOIN): 오른쪽 테이블의 모든 행을 반환하고, 일치하지 않으면 NULL
+   FULL JOIN (OUTER JOIN): 두 테이블의 모든 행을 반환하고, 일치하지 않으면 NULL
+
+   CROSS JOIN (곱 조인): 두 테이블의 모든 가능한 조합을 반환
+      CROSS JOIN/ 해당 테이블이 모든 경우의 수를 갖는것
+
+   Self Join: 같은 테이블을 두 번 이상 참조하여 결합
+   Natural Join: 동일한 이름을 가진 열을 자동으로 기준으로 결합
+   Theta Join: 다양한 비교 연산자(비등호 연산자)로 결합
    
+<Self Join 설명>
+자체 조인은 하나의 테이블을 **두 개의 별칭(alias)**을 사용하여 서로 조인하는 방식입니다.
+
+   SELECT e1.name AS employee_name, e2.name AS manager_name
+   FROM employees e1
+   JOIN employees e2
+      ON e1.manager_id = e2.employee_id;
+이 예시에서 employees 테이블을 두 번 사용하여 e1(직원)과 e2(관리자)를 나타냅니다.
+e1.manager_id = e2.employee_id 조건을 통해 직원이 속한 관리자를 찾습니다.
+이렇게 하면 직원과 그들의 상위 관리자 간의 관계를 출력할 수 있습니다.
+
+
+
+
+< SQL Join의 종류 2 >
+qui Join과 Non-Equi Join
+조인 조건이 같은 값(=)을 비교하는지, 
+아니면 다른 조건(비교 연산자(예: <, >, <=, >=, <> 등))을 사용하는지에 따라 다릅니다.
+
+1) 등가 조인 qui Join
+SELECT Employees.name, Departments.name
+FROM Employees
+JOIN Departments
+    ON Employees.department_id = Departments.id;
+
+2) 비등가 조인  Non-Equi Join
+SELECT Employees.name, Salaries.amount
+FROM Employees
+JOIN Salaries
+    ON Employees.salary BETWEEN Salaries.min_salary AND Salaries.max_salary;
+
+
+
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 join 설명 https://seungsami.tistory.com/56 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -695,36 +791,347 @@ JOIN은 두개의 테이블을 합쳐서 하나의 테이블인 것 처럼 보�
    where e.employee_id = 110;
 
 
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 서브쿼리
 서브쿼리(Subquery)는 "쿼리 안의 쿼리"를 의미
 즉, 하나의 SQL 쿼리 내에서 다른 SQL 쿼리를 포함하는 구조
 
 1. 단일 값 반환 서브쿼리: 하나의 값만 반환합니다.
-   SELECT name
-   FROM employees
-   WHERE salary = (SELECT MAX(salary) FROM employees);
-위 쿼리에서 서브쿼리는 직원들 중에서 가장 높은 급여를 찾고, 외부 쿼리는 그 급여를 받는 직원의 이름을 반환합니다.
+      SELECT name
+      FROM employees
+      WHERE salary = (SELECT MAX(salary) FROM employees);
+   위 쿼리에서 서브쿼리는 직원들 중에서 가장 높은 급여를 찾고, 외부 쿼리는 그 급여를 받는 직원의 이름을 반환합니다.
+
 
 2. 여러 값 반환 서브쿼리: 여러 개의 값을 반환
-   SELECT name
-   FROM employees
-   WHERE department_id IN (SELECT department_id FROM departments WHERE location = 'New York');
-이 예시에서는 'New York'에 위치한 부서에 속한 직원들의 이름을 찾기 위해 서브쿼리를 사용합니다.
+      SELECT name
+      FROM employees
+      WHERE department_id IN (SELECT department_id FROM departments WHERE location = 'New York');
+   이 예시에서는 'New York'에 위치한 부서에 속한 직원들의 이름을 찾기 위해 서브쿼리를 사용합니다.
+
 
 3. 스칼라 서브쿼리: 한 개의 값(단일 행과 단일 열)을 반환하는 서브쿼리입니다.
-   SELECT (SELECT AVG(salary) FROM employees) AS average_salary;
+    SELECT (SELECT AVG(salary) FROM employees) AS average_salary;
+
 
 4. 조인 서브쿼리: 서브쿼리를 JOIN으로 결합할 수도 있습니다.
-   SELECT e.name, e.salary
-   FROM employees e
-   JOIN (SELECT department_id, AVG(salary) AS avg_salary FROM employees GROUP BY department_id) sub
-   ON e.department_id = sub.department_id
-   WHERE e.salary > sub.avg_salary;
+      SELECT e.name, e.salary
+      FROM employees e
+      JOIN (SELECT department_id, AVG(salary) AS avg_salary FROM employees GROUP BY department_id) sub
+      ON e.department_id = sub.department_id
+      WHERE e.salary > sub.avg_salary;
+
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 view = 가상테이블
 실제로 저장된 데이터가 아니라, 쿼리 결과를 가상의 테이블처럼 취급할 수 있는 객체
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 함수들
+SQL 함수는
+
+집계, 숫자 처리, 날짜 및 시간 처리,
+
+문자열 처리,
+
+조건부 처리, 
+데이터 타입 변환, 
+윈도우 처리 
+
+0. 집계 함수 (Aggregate Functions)
+여러 행을 하나의 값으로 집계하는 함수들입니다.
+   COUNT
+   행의 개수를 세는 함수입니다.
+
+   SUM
+   숫자 값들의 합을 구합니다.
+
+   AVG
+   숫자 값들의 평균을 구합니다.
+
+   MAX
+   주어진 값들 중 가장 큰 값을 반환합니다.
+
+   MIN
+   주어진 값들 중 가장 작은 값을 반환합니다.
+
+
+1. 문자열 함수 (String Functions)
+문자열을 처리하고 변환하는 함수들입니다.
+
+   CONCAT
+   여러 문자열을 하나의 문자열로 결합합니다.
+
+   SUBSTRING
+   문자열에서 지정한 부분을 잘라서 반환합니다.
+
+   LENGTH
+   문자열의 길이를 반환합니다.
+
+   TRIM
+   문자열의 양쪽 공백을 제거합니다.
+
+   UPPER
+   문자열을 모두 대문자로 변환합니다.
+
+   LOWER
+   문자열을 모두 소문자로 변환합니다.
+
+   REPLACE
+   문자열 내에서 특정 문자열을 다른 문자열로 바꿉니다.
+
+   LEFT
+   문자열의 왼쪽에서 지정된 수만큼 문자를 반환합니다.
+
+   RIGHT
+   문자열의 오른쪽에서 지정된 수만큼 문자를 반환합니다.
+
+
+2. 숫자 함수 (Numeric Functions)
+숫자 데이터를 처리하는 함수들입니다.
+
+   ROUND
+   숫자를 지정된 소수점 자리까지 반올림합니다.
+
+   CEIL (또는 CEILING)
+   숫자를 올림하여 가장 가까운 정수로 만듭니다.
+
+   FLOOR
+   숫자를 내림하여 가장 가까운 정수로 만듭니다.
+
+   ABS
+   숫자의 절대값을 반환합니다.
+
+   MOD
+   두 숫자의 나머지를 반환합니다.
+
+   POW
+   숫자의 거듭제곱을 계산합니다.
+
+
+3. 날짜 및 시간 함수 (Date and Time Functions)
+날짜와 시간을 다루는 함수들입니다.
+
+   NOW
+   현재 날짜와 시간을 반환합니다.
+
+   CURDATE
+   현재 날짜만 반환합니다.
+
+   CURTIME
+   현재 시간만 반환합니다.
+
+   DATE_ADD
+   날짜에 지정된 시간 간격을 더합니다.
+
+   DATE_SUB
+   날짜에서 지정된 시간 간격을 뺍니다.
+
+   DATEDIFF
+   두 날짜 사이의 차이를 일수로 반환합니다.
+
+   YEAR, MONTH, DAY
+   날짜에서 연, 월, 일을 각각 반환합니다.
+
+   HOUR, MINUTE, SECOND
+   시간에서 시, 분, 초를 각각 반환합니다.
+
+
+4. 조건 함수 (Conditional Functions)
+조건에 따라 다른 값을 반환하는 함수들입니다.
+
+   IF
+   조건을 평가하여 참일 때와 거짓일 때 다른 값을 반환합니다.
+
+   CASE
+   여러 조건을 평가하고 해당 조건에 맞는 값을 반환합니다.
+
+   COALESCE
+   여러 값 중 NULL이 아닌 첫 번째 값을 반환합니다.
+
+   NULLIF
+   두 값이 같으면 NULL을 반환하고, 다르면 첫 번째 값을 반환합니다.
+
+
+5. 변환 함수 (Conversion Functions)
+데이터 타입을 변환하는 함수들입니다.
+
+   CAST
+   값을 지정한 데이터 타입으로 변환합니다.
+
+   CONVERT
+   값 또는 표현식을 지정한 데이터 타입으로 변환합니다.
+
+
+6. 윈도우 함수 (Window Functions)
+데이터를 "윈도우" 내에서 처리하여 결과를 반환하는 함수들입니다. 주로 OVER와 함께 사용됩니다.
+
+   ROW_NUMBER
+   결과 집합 내에서 각 행에 고유 번호를 부여합니다.
+
+   RANK
+   순위 계산을 수행하며, 동점이 있으면 같은 순위를 부여합니다.
+
+   DENSE_RANK
+   순위 계산을 수행하지만, 동점이 있어도 순위가 연속적으로 부여됩니다.
+
+   NTILE
+   데이터를 N개의 그룹으로 나누고 각 행이 속하는 그룹 번호를 반환합니다.
+
+   8. 기타 함수 (Other Functions)
+   기타 다양한 기능을 제공하는 함수들입니다.
+
+   DISTINCT
+   중복된 값을 제거하고 유일한 값만 반환합니다.
+
+   GROUP_CONCAT
+   그룹화된 값들을 결합하여 하나의 문자열로 반환합니다.
+
+   UUID
+   고유한 식별자인 UUID를 생성하여 반환합니다.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+SQL 실행 순서 (Logical Query Processing Order):
+
+SQL 쿼리 처리 순서 (논리적 처리 순서):
+
+1. FROM: 테이블을 먼저 읽어들입니다.
+   FROM 절은 테이블이나 서브쿼리를 읽고, 이후 **조인(JOIN)**이 있을 경우 이를 결합합니다.
+
+2. ON: JOIN 조건을 처리합니다.
+   ON 절은 조인 조건을 처리하여 두 테이블 간의 결합을 수행합니다.
+
+3. WHERE: 조건 필터링을 수행합니다.
+   WHERE 절은 FROM과 JOIN에서 결합된 데이터에 조건을 적용하여 불필요한 행을 제외합니다.
+
+4. GROUP BY: 그룹화를 수행합니다.
+   GROUP BY 절은 데이터의 그룹화를 처리합니다. 특정 열에 대해 집계 함수(Aggregate Functions)를 적용할 때 그룹화를 사용합니다.
+
+5. HAVING: 그룹화된 데이터 필터링을 수행합니다.
+   HAVING은 GROUP BY 이후에 조건을 적용하여 그룹화된 결과를 필터링합니다.
+
+6. SELECT: 결과 열을 선택합니다.
+   SELECT 절은 실제로 우리가 보고자 하는 열을 선택합니다.
+
+7. ORDER BY: 정렬을 수행합니다.
+   ORDER BY 절은 결과를 원하는 순서대로 정렬합니다.
+
+8. LIMIT / OFFSET: 결과 행의 수 제한을 설정합니다.
+   LIMIT와 OFFSET은 결과에서 반환할 행 수를 제한하거나 건너뛰기를 할 때 사용됩니다.
+
+예시 쿼리:
+   SELECT name, department
+   FROM employees
+   JOIN departments ON employees.department_id = departments.id
+   WHERE age > 30
+   GROUP BY department
+   HAVING COUNT(*) > 5
+   ORDER BY name DESC
+   LIMIT 10;
+
+이 쿼리에서 SQL 엔진은 다음 순서대로 쿼리를 처리합니다:
+순서대로
+1   FROM: employees 테이블과 departments 테이블을 읽어옵니다.
+2   JOIN: employees와 departments를 ON 조건(employees.department_id = departments.id)을 기준으로 결합합니다.
+3   WHERE: 결합된 데이터에서 age > 30인 행만 필터링합니다.
+4   GROUP BY: department별로 그룹화합니다.
+5   HAVING: COUNT(*) > 5 조건을 기준으로 그룹화된 데이터를 필터링합니다.
+6   SELECT: name과 department 열을 선택합니다.
+7   ORDER BY: 결과를 name을 기준으로 내림차순 정렬합니다.
+8   LIMIT: 결과에서 상위 10개의 행만 반환합니다.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+스토어드 프로시저 (Stored Procedure)
+데이터베이스에서 실행되는 SQL 코드 블록
+데이터베이스 내에서 SQL 명령어들을 모아두고, 필요할 때마다 호출해서 실행하는 방식
+== 함수 , 메서드와 비슷한 기능을
+
+1.프로시저 정의:
+
+ㅡㅡㅡㅡㅡ예시1
+   CREATE PROCEDURE procedure_name
+   AS
+   BEGIN
+      -- SQL 명령어들
+      SELECT * FROM customers;
+      UPDATE inventory SET stock = stock - 1 WHERE product_id = 100;
+   END;
+ㅡㅡㅡㅡㅡ
+SQL에서는 CREATE PROCEDURE 문을 사용하여 프로시저를 정의
+
+AS는 프로시저의 본문(내용)이 시작된다는 것을 나타내는 키워드
+CREATE PROCEDURE 구문 뒤에 오는 AS는 "이제부터 이 프로시저의 내용이 시작됩니다"라는 뜻
+== AS는 프로시저의 정의가 끝났음을 나타내고, 실제 작업을 할 부분이 시작된다는 것을 알립니다.
+
+**BEGIN**과 **END**는 SQL 코드 블록을 묶는 역할
+
+ㅡㅡㅡㅡㅡ예시2
+   CREATE PROCEDURE greet_person(@name VARCHAR(50))
+   AS
+   BEGIN
+      PRINT 'Hello, ' + @name + '!';
+   END;
+ㅡㅡㅡㅡㅡ
+   CREATE PROCEDURE greet_person(@name VARCHAR(50))  -- 프로시저 정의 시작
+   AS  -- 프로시저 정의가 끝나고, 내용이 시작됨
+   BEGIN  -- 작업 시작
+      PRINT 'Hello, ' + @name + '!';  -- @name을 사용하여 출력
+   END;  -- 작업 끝
+ㅡㅡㅡㅡㅡ
+
+**@**는 프로시저에서 사용할 변수를 선언할 때 사용.
+**VARCHAR(50)**는 데이터 타입을 정의하는 부분.
+변수 선언에서 데이터 타입은 항상 변수 이름 뒤에 나옵니다.
+여기에서 **@name**은 VARCHAR(50) 타입의 변수로, 이름을 받을 용도로 사용됩니다.
+
+2. 프로시저 실행:
+   EXEC procedure_name;
+프로시저가 정의되면, 그 후에는 EXEC 또는 CALL 명령어를 사용하여 실행
+
+ㅡㅡㅡ
+
+SQL에서의 IF 문 구조 
+   (프로시저, 함수 내에서)
+   SQL에서 IF문은 보통 BEGIN ... END 블록 안에 작성되며,  특정 조건에 따라 실행할 SQL 문을 분기할 수 있게 합니다.
+
+      IF 조건 THEN
+         -- 조건이 참일 때 실행할 SQL 문
+      ELSE
+         -- 조건이 거짓일 때 실행할 SQL 문
+      END IF;
+
+[IF문 예시]
+MySQL에서 IF문 사용 예시
+      DELIMITER //   -- 구분자를 //로 변경
+
+      CREATE PROCEDURE check_age(IN input_age INT)
+      BEGIN
+         IF input_age >= 18 THEN
+            SELECT 'Adult' AS Status;
+         ELSE
+            SELECT 'Minor' AS Status;
+         END IF;
+      END //
+
+      DELIMITER ;    -- 구분자를 다시 세미콜론(;)으로 복원
+
+DELIMITER //: SQL의 기본 구분자인 **;**를 //로 변경하여 프로시저나 함수 내부에서 세미콜론을 자유롭게 사용할 수 있게 합니다.
+END // 구분자로 닫음
+DELIMITER ;: 프로시저 정의가 끝난 후, SQL의 기본 구분자인 세미콜론(;)을 다시 사용할 수 있도록 구분자를 원래대로 복원합니다.
+
+
+ㅡㅡㅡ
+DELIMITER 사용법
+CREATE PROCEDURE, CREATE FUNCTION, CREATE TRIGGER 등을 작성할 때 사용
+**DELIMITER**는 MySQL에서 사용되는 명령어로, 기본적으로 세미콜론(;)(;)을 SQL 명령어의 끝을 구분하는 데 사용하지만, 
+프로시저나 함수 같은 복잡한 블록을 정의할 때는 세미콜론을 명령어 종료로 인식하지 않게 하기 위해 사용합니다.
+
