@@ -20,8 +20,8 @@ public class EmployeesDB {
     private static Connection connection = null;
     // 싱글톤 패턴에선 접속을 계속 유지하는 connection pool에 적합한 클래스가 아니..지만 (이건 추후에 설명)
 
-    public static Connection getConnecttion () throws Exception {
-        if(connection != null && !connection.isClosed() ) { return connection;} // return하면 여기서 함수 종료.
+    public static Connection getConnection() throws Exception {
+        if(connection!=null && !connection.isClosed()){ return connection; } // return하면 여기서 함수 종료.
         // 위는 싱글톤 패턴에서 꼭 구현해야 하는 코드
         Class.forName(DRIVER_CLASS);
         connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -32,7 +32,7 @@ public class EmployeesDB {
         // test를 하면서 개발을 진행하는 것을 TDD; Test Driven Development라 부른다.
         // test main :  TDD를 도와주는 도구없이 main에서 진행
 
-        Connection conn = EmployeesDB.getConnecttion();
+        Connection conn = EmployeesDB.getConnection();
         System.out.println(conn); // Connection test 하는 것.
 
 
