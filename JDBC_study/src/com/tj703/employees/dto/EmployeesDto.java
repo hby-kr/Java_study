@@ -12,6 +12,7 @@ package com.tj703.employees.dto;
 // EmployeesDAO는 어플리케이션과 DB, 중간자 역할로 데이터 불러오는 메서드를 만드는 클래스
 
 import java.util.Date;
+import java.util.List;
 
 public class EmployeesDto {
     /* employees db의 열 복붙
@@ -30,12 +31,10 @@ public class EmployeesDto {
     private char gender;
     private Date hireDate;
 
-
-    // getter setter 만들기
+    // getter setter 만들기 (자동화)
     public int getEmpNo() {
         return empNo;
     }
-
     public void setEmpNo(int empNo) {
         this.empNo = empNo;
         // 여기 this 왜 씀? 매개변수의 이름과 현재 클래스의 필드이름이 같기 때문.
@@ -47,7 +46,6 @@ public class EmployeesDto {
     public Date getBirthDate() {
         return birthDate;
     }
-
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
@@ -55,7 +53,6 @@ public class EmployeesDto {
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -63,7 +60,6 @@ public class EmployeesDto {
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -71,7 +67,6 @@ public class EmployeesDto {
     public char getGender() {
         return gender;
     }
-
     public void setGender(char gender) {
         this.gender = gender;
     }
@@ -79,20 +74,65 @@ public class EmployeesDto {
     public Date getHireDate() {
         return hireDate;
     }
-
     public void setHireDate(Date hireDate) {
         this.hireDate = hireDate;
     }
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    // SalariesDto 따로 만들었고, 그것을 employee 안에 넣으려고 하기 있으므로,
+    // dto에 SalariesDto가 들어갈 수 있는 자리를 만들어주기
+
+    // emp : sal = 1 : n   join 임
+    // 사원이 복수의 급여정보를 가지고 있다.
+
+    // 필드 선언
+    //1:n인데 1:1인거처럼 출력
+    private SalariesDto salaries;
+    private List<SalariesDto> salariesList;
+    // 하나의 사람 정보에, 여러 봉급값을 넣을려고 하는 것. list 안에 다시 list 넣는 것.
+
+    // 매서드 구현
+    public SalariesDto getSalaries() {
+        return salaries;
+    }
+    public void setSalaries(SalariesDto salaries) {
+        this.salaries = salaries;
+    }
+
+    public List<SalariesDto> getSalariesList() {
+        return salariesList;
+    }
+    public void setSalariesList(List<SalariesDto> salariesList) {
+        this.salariesList = salariesList;
+    }
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    // N : 1
+    private DepartmentsDto departments;
+
+    public DepartmentsDto getDepartments() {
+        return departments;
+    }
+    public void setDepartments(DepartmentsDto departments) {
+        this.departments = departments;
+    }
+
+
+
+    //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     @Override
     public String toString() {
         return "{" +
-                "empNo=" + empNo +
-                ", birthDate:" + birthDate +
-                ", firstName:'" + firstName + '\'' +
-                ", lastName:'" + lastName + '\'' +
-                ", gender:" + gender +
-                ", hireDate:" + hireDate +
+                "empNo: " + empNo +
+                ", birthDate: " + birthDate +
+                ", firstName: " + firstName + '\'' +
+                ", lastName: " + lastName + '\'' +
+                ", gender: " + gender +
+                ", hireDate: " + hireDate +
+                ", salariesList: " + salariesList +
+                ", salaries: " + salaries +
+                ", departments: " + departments +
                 "}\n";
     }
 }
