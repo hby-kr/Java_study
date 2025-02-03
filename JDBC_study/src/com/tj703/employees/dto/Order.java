@@ -12,7 +12,6 @@ public class Order {
 
         dept_no,
         dept_name
-        emp_no,
     }
 
     public enum Direct {

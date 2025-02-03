@@ -110,3 +110,95 @@ class Schedule {
    }
 
 }
+
+class Escafe {
+
+// 이스케이프 시퀀스 (escape sequence)
+//    따옴표(")나 역슬래시(\)와 같은 특수 문자는 문자열 안에서 그대로 사용하기 어렵기 때문에,
+//    이를 표시하기 위해 이스케이프 시퀀스를 사용
+//
+//    주요 이스케이프 시퀀스:
+//     \": 큰따옴표(")를 문자열 내에 포함시키기 위해 사용됩니다.
+//     \\: 백슬래시(\)를 문자열 내에 포함시키기 위해 사용됩니다.
+//     \n: 줄 바꿈(newline)을 나타내며, 텍스트에서 새 줄을 시작하게 합니다.
+//     \t: 탭(tab)을 나타내며, 수평으로 들여쓰기를 만듭니다.
+//     \r: 캐리지 리턴(carriage return)을 나타내며, 커서를 줄의 맨 앞으로 이동시킵니다.
+//     \b: 백스페이스(backspace)를 나타냅니다. 텍스트에서 한 문자를 지우는 효과를 가집니다.
+//     \f: 폼 피드를 나타내며, 주로 화면에서 새 페이지로 넘어가는 효과를 줄 수 있습니다.
+//     \ u: 유니코드 문자를 표현할 때 사용하며, \ u 뒤에 4자리 16진수를 적습니다.
+
+
+   public void escape() {
+
+   // 1. \" : 큰따옴표를 출력
+      System.out.println("He said, \"Hello, World!\"");
+
+      // 출력: He said, "Hello, World!"
+
+
+      // 2. \n : 줄 바꿈 (Newline)
+      System.out.println("Hello\nWorld");
+
+      // 출력:
+      // Hello
+      // World
+
+
+      // 3. \t : 탭 (Tab)
+      System.out.println("Hello\tWorld");
+
+      // 출력: Hello   World  (탭 간격이 들어감)
+
+
+      // 4. \\ : 백슬래시 출력
+      System.out.println("This is a backslash: \\");
+
+      // 출력: This is a backslash: \
+
+
+      // 5. \r : 캐리지 리턴 (줄 맨 앞으로 커서 이동)
+      System.out.println("Hello\rWorld");
+
+      // 출력: World (Hello가 덮어쓰기 됨)
+
+
+      // 6. \b : 백스페이스 (한 문자를 지움)
+      System.out.println("Hello\bWorld");
+
+      // 출력: HellWorld (o가 삭제됨)
+
+
+      // 7. \f : 폼 피드 (새 페이지로 이동, 콘솔에서는 보통 아무 효과 없음)
+      System.out.println("Hello\fWorld");
+
+      // 출력: (콘솔에서는 페이지 변경을 보지 못할 수 있음, 일부 출력장치에서만 동작)
+
+
+      // 8. \ u : 유니코드 문자
+      System.out.println("Unicode: \u0048\u0065\u006C\u006C\u006F");
+
+      // 출력: Unicode: Hello (유니코드 값으로 'H', 'e', 'l', 'l', 'o'가 나타남)
+   }
+
+   ;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

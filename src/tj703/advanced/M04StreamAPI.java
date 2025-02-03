@@ -212,3 +212,32 @@ public class M04StreamAPI {
 
     }
 }
+
+
+/*
+>> 기본형 스트림 Primitive Stream ??
+스트림stream은 기본적으로 자료형 객체를 다룸.
+기본형 스트림Primitive Stream은 박싱(int -> Integer) 비용을 줄이기 위해 기본형 숫자들을 직접 처리할 수 있도록 만들어졌습니다.
+
+기본형 스트림의 종류:
+    IntStream: int 값을 다루는 스트림
+    LongStream: long 값을 다루는 스트림
+    DoubleStream: double 값을 다루는 스트림
+
+어떤 자료 객체의 값을 기본형 스트림으로 변환하려면,
+mapToInt(), mapToLong(), mapToDouble()와 같은 메서드를 사용해야 한다.
+그 후로는 기본형 스트림의 메서드를 사용해서 내장된 연산을 손쉽게 할 수 있음
+
+기본형 스트림의 주요 메서드:
+    sum(): 스트림에 포함된 숫자의 합을 구합니다.
+    average(): 스트림에 포함된 숫자의 평균을 구합니다.
+    min() / max(): 스트림에 포함된 숫자 중 최솟값/최댓값을 구합니다.
+    range(): 특정 범위의 값을 생성하여 스트림을 만듭니다.
+    mapToInt(), mapToLong(), mapToDouble(): 객체 스트림을 기본형 스트림으로 변환할 때 사용됩니다.
+
+가진 한계
+-  기본형 스트림은 제네릭을 사용할 수 없음 (근데 어짜피 기본형은 null 값이 없잖아?)
+-  다시 Stream으로 변환 시 유연성 부족
+
+
+ */

@@ -2,6 +2,8 @@ package com.tj703.employees.dao;
 
 import com.tj703.employees.EmployeesDB;
 import com.tj703.employees.dto.DepartmentsDto;
+import com.tj703.employees.dto.DeptField;
+import com.tj703.employees.dto.Order;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -61,6 +63,27 @@ public class DepartmentsDaoImp implements DepartmentsDao {
         findAll=new ArrayList<DepartmentsDto>();
         while(rs.next()){
             DepartmentsDto dto=new DepartmentsDto();
+            dto.setDeptNo(rs.getString("dept_no"));
+            dto.setDeptName(rs.getString("dept_name"));
+            findAll.add(dto);
+        }
+        return findAll;
+    }
+
+    @Override
+    public List<DepartmentsDto> findAll(DeptField field, Order.Direct direct, int index, int size) throws Exception {
+
+        List<DepartmentsDto> findAll = null;
+
+        String sql = "select * from departments ORDER BY" + field + " " + direct + " limit index, size";
+
+        ps = conn.prepareStatement(sql);
+        rs = ps.executeQuery();
+
+        findAll = new ArrayList<DepartmentsDto>();
+
+        while (rs.next()) {
+            DepartmentsDto dto = new DepartmentsDto();
             dto.setDeptNo(rs.getString("dept_no"));
             dto.setDeptName(rs.getString("dept_name"));
             findAll.add(dto);

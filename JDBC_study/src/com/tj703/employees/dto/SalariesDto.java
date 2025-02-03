@@ -19,7 +19,6 @@ public class SalariesDto {
     public int getEmpNo() {
         return empNo;
     }
-
     public void setEmpNo(int empNo) {
         this.empNo = empNo;
     }
@@ -27,7 +26,6 @@ public class SalariesDto {
     public int getSalary() {
         return Salary;
     }
-
     public void setSalary(int salary) {
         Salary = salary;
     }
@@ -35,7 +33,6 @@ public class SalariesDto {
     public Date getFromDate() {
         return fromDate;
     }
-
     public void setFromDate(Date fromDate) {
         this.fromDate = fromDate;
     }
@@ -43,7 +40,6 @@ public class SalariesDto {
     public Date getToDate() {
         return toDate;
     }
-
     public void setToDate(Date toDate) {
         this.toDate = toDate;
     }
@@ -56,7 +52,6 @@ public class SalariesDto {
                 "empNo: " + empNo +
                 ", Salary: " + Salary +
                 ", fromDate: " + fromDate +
-                ", toDate: " + toDate +
-                '}';
+                ", toDate: " + toDate + '}';
     }
 }

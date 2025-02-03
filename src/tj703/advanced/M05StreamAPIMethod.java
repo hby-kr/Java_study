@@ -73,8 +73,7 @@ Stream API에서 최종 연산자 (terminal operations)
         forEach(): 스트림의 각 요소에 대해 주어진 동작을 수행합니다.
         reduce(): 스트림의 모든 요소를 결합하여 하나의 결과를 반환합니다.
         collect(): 스트림의 요소를 Collector를 이용해 집합체로 축소합니다. (List, set, map 등등으로 변환)
-                Collectors.toList(), Collectors.toSet(), Collectors.toMap()과 같은 메서드를 통해 컬렉션 타입으로 변환할 수 있고,
-                ㄴ List, Set, Map, LinkedList 로 만들 수 있다.
+                Collectors.toList(), Collectors.toSet(), Collectors.toMap()과 같은 메서드를 통해 컬렉션 타입 List, Set, Map, LinkedList 로 변환할 수 있다.
                 ㄴ 심지어 문자열String으로 만들 수 있다. : Collectors.joining()
                 ㄴ 특정 조건으로 데이터를 그룹화할 수도 있다. 마치sql처럼 :  Collectors.groupingBy()
                 ㄴ 숫자 데이터를 요약 통계(count, sum, min, max, average) 값으로 바로 만들어줌.    : (Collectors.summarizingInt(), Collectors.summarizingDouble())

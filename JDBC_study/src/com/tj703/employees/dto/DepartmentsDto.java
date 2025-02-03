@@ -24,7 +24,6 @@ public class DepartmentsDto {
     public String toString() {
         return "{" +
                 "\"deptNo\" : \"" + deptNo + '\"' +
-                ", \"deptName\" : \"" + deptName + '\"' +
-                "}\n";
+                ", \"deptName\" : \"" + deptName + '\"' + "}\n";
     }
 }
